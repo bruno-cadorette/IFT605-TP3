@@ -17,22 +17,26 @@ import jade.util.Logger;
 /**
  * Created by root on 16-10-26.
  */
-public class EquationReceiver extends Agent {
+public class EquationReceiver<T extends AbstractEquation> extends Agent {
 
     private Logger myLogger = Logger.getMyLogger(getClass().getName());
     private ContentManager manager = (ContentManager) getContentManager();
+
+    protected AbstractEquation specificAction(T equation);
 
     CyclicBehaviour behaviour = new CyclicBehaviour() {
         @Override
         public void action() {
             try {
+                //Recevoir
                 ACLMessage msg = myAgent.receive();
                 if (msg != null) {
                     ACLMessage reply = msg.createReply();
 
                     if (msg.getPerformative() == ACLMessage.REQUEST) {
                         String content = msg.getContent();
-                        AbstractEquation eq1 = (AbstractEquation) msg.getContentObject();
+                        T eq1 = (T) msg.getContentObject();
+                        specificAction(eq1);
                         reply.setPerformative(ACLMessage.INFORM);
                         String out = (String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), eq1.getUserReadableString()));
                         reply.setContent(out);
