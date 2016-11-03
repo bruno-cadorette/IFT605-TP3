@@ -13,16 +13,27 @@ import jade.domain.JADEAgentManagement.JADEManagementOntology;
 import jade.lang.acl.ACLMessage;
 import jade.util.Logger;
 
+import jade.domain.AMSService;
+import jade.domain.FIPAAgentManagement.*;
+
+import java.util.Arrays;
+
 
 /**
  * Created by root on 16-10-26.
  */
-public class EquationReceiver<T extends AbstractEquation> extends Agent {
+public abstract class EquationReceiver<T extends AbstractEquation> extends Agent {
+
+    public static final String Constant = "Constant";
+    public static final String BasicEquation = "BasicEquation";
+    public static final String MultiplicativeEquation = "MultiplicativeEquation";
+    public static final String SummativeEquation = "SummativeEquation";
 
     private Logger myLogger = Logger.getMyLogger(getClass().getName());
     private ContentManager manager = (ContentManager) getContentManager();
 
-    protected AbstractEquation specificAction(T equation);
+    protected abstract AbstractEquation specificAction(T equation);
+    protected abstract String Type();
 
     CyclicBehaviour behaviour = new CyclicBehaviour() {
         @Override
@@ -31,16 +42,30 @@ public class EquationReceiver<T extends AbstractEquation> extends Agent {
                 //Recevoir
                 ACLMessage msg = myAgent.receive();
                 if (msg != null) {
-                    ACLMessage reply = msg.createReply();
 
+                    ACLMessage reply = msg.createReply();
                     if (msg.getPerformative() == ACLMessage.REQUEST) {
+
+                        //Envoyer
                         String content = msg.getContent();
-                        T eq1 = (T) msg.getContentObject();
-                        specificAction(eq1);
-                        reply.setPerformative(ACLMessage.INFORM);
-                        String out = (String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), eq1.getUserReadableString()));
-                        reply.setContent(out);
-                        System.out.print(out);
+                        try {
+                            T eq1 = (T) msg.getContentObject();
+
+
+                            AbstractEquation answer = specificAction(eq1);
+
+
+                            reply.setPerformative(ACLMessage.INFORM);
+                            reply.setContentObject(answer);
+                            String out = (String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), eq1.getUserReadableString()));
+                            System.out.print(out);
+                        }
+                        catch (Exception ex){
+                            //Le cast plus haut n'a pas fonctionné. Bien entendu c'est impossible de le savoir avec instanceof car ça ne fonctionne pas avec les generics
+                            //c'est ça qu'on veut car on l'envoit a tout les agents
+                        }
+
+
 
                         if (content != null) {
                             myLogger.log(Logger.INFO, "Agent " + getLocalName() + " - Received Message Request from " + msg.getSender().getLocalName());
@@ -88,5 +113,30 @@ public class EquationReceiver<T extends AbstractEquation> extends Agent {
         }
         System.out.println(getAID());
 
+    }
+
+    public AbstractEquation derivate(AbstractEquation eq){
+        AMSAgentDescription [] agents = null;
+
+        try {
+            SearchConstraints c = new SearchConstraints();
+            c.setMaxResults ((long)-1);
+            agents = AMSService.search( this, new AMSAgentDescription (), c );
+
+
+
+        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
+        msg.setContentObject(eq);
+
+        for (int i=0; i<agents.length;i++)
+            msg.addReceiver( agents[i].getName() );
+
+        send(msg);
+
+        //Faudrait pouvoir différencer si on recoit une equation a résoudre ou bien une réponse d'un agent
+
+        }
+        catch (Exception e) { }
+        return null;
     }
 }
