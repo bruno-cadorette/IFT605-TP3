@@ -9,10 +9,13 @@ import jade.content.onto.BasicOntology;
 import jade.content.onto.Ontology;
 import jade.core.AID;
 import jade.core.Agent;
+import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.UnreadableException;
 import jade.util.leap.ArrayList;
 import jade.util.leap.List;
+import udes.ds.agent.AbstractEquation;
 import udes.ds.agent.BasicEquation;
 import udes.ds.agent.Equation;
 import udes.ds.agent.SummativeEquation;
@@ -38,6 +41,7 @@ public class SenderBehaviour extends SimpleBehaviour {
     public void action() {
         try {
             // Preparing the first message
+            Thread.sleep(2000);
             ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
             AID receiver = new AID("eq", false);
 
@@ -50,6 +54,28 @@ public class SenderBehaviour extends SimpleBehaviour {
             // Send the message
             System.out.println("[" + myAgent.getLocalName() + "] Sending the message...");
             myAgent.send(msg);
+            myAgent.addBehaviour(new SimpleBehaviour() {
+                boolean finished = false;
+                @Override
+                public void action() {
+                    ACLMessage msg = myAgent.receive();
+                    if(msg != null){
+                        try {
+                            AbstractEquation eq1 = (AbstractEquation)msg.getContentObject();
+                            eq1.printUserReadable();
+                            finished = true;
+                        } catch (UnreadableException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+
+                @Override
+                public boolean done() {
+                    return finished;
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }

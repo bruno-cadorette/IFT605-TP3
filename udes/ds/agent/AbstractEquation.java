@@ -15,6 +15,7 @@ package udes.ds.agent;
  */
 public abstract class AbstractEquation implements Equation {
 
+    abstract public String Type();
 	/**
 	 * Returns a user-readable form of the equation
 	 *

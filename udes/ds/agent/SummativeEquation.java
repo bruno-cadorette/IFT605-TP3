@@ -39,7 +39,12 @@ public class SummativeEquation extends AbstractEquation {
 		return (_first.getFunctionValue(x) + _second.getFunctionValue(x));
 	}
 
-	/**   
+	@Override
+	public String Type() {
+		return EquationReceiver.SummativeEquation;
+	}
+
+	/**
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
 	public String getUserReadableString() {

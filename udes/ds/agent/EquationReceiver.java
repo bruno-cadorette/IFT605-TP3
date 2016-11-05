@@ -3,7 +3,7 @@ package udes.ds.agent;
 import jade.content.ContentManager;
 import jade.content.lang.sl.SLCodec;
 import jade.core.Agent;
-import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.*;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
@@ -11,6 +11,8 @@ import jade.domain.FIPAException;
 import jade.domain.FIPANames;
 import jade.domain.JADEAgentManagement.JADEManagementOntology;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.lang.acl.UnreadableException;
 import jade.util.Logger;
 
 import jade.domain.AMSService;
@@ -23,11 +25,12 @@ import java.util.Arrays;
  * Created by root on 16-10-26.
  */
 public abstract class EquationReceiver<T extends AbstractEquation> extends Agent {
-
     public static final String Constant = "Constant";
     public static final String BasicEquation = "BasicEquation";
     public static final String MultiplicativeEquation = "MultiplicativeEquation";
     public static final String SummativeEquation = "SummativeEquation";
+
+    public int cpt = 0;
 
     private Logger myLogger = Logger.getMyLogger(getClass().getName());
     private ContentManager manager = (ContentManager) getContentManager();
@@ -43,38 +46,25 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
                 ACLMessage msg = myAgent.receive();
                 if (msg != null) {
 
-                    ACLMessage reply = msg.createReply();
+                    ACLMessage reply = new ACLMessage(ACLMessage.INFORM);
+                    reply.addReceiver(msg.getSender());
+                    reply.setSender(this.myAgent.getAID());
                     if (msg.getPerformative() == ACLMessage.REQUEST) {
 
                         //Envoyer
-                        String content = msg.getContent();
                         try {
                             T eq1 = (T) msg.getContentObject();
-
-
                             AbstractEquation answer = specificAction(eq1);
 
 
                             reply.setPerformative(ACLMessage.INFORM);
                             reply.setContentObject(answer);
                             String out = (String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), eq1.getUserReadableString()));
-                            System.out.print(out);
+                            System.out.println(out);
                         }
                         catch (Exception ex){
                             //Le cast plus haut n'a pas fonctionné. Bien entendu c'est impossible de le savoir avec instanceof car ça ne fonctionne pas avec les generics
                             //c'est ça qu'on veut car on l'envoit a tout les agents
-                        }
-
-
-
-                        if (content != null) {
-                            myLogger.log(Logger.INFO, "Agent " + getLocalName() + " - Received Message Request from " + msg.getSender().getLocalName());
-                            reply.setPerformative(ACLMessage.INFORM);
-                            reply.setContent(String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), content));
-                        } else {
-                            myLogger.log(Logger.INFO, "Agent " + getLocalName() + " - Unexpected request [" + content + "] received from " + msg.getSender().getLocalName());
-                            reply.setPerformative(ACLMessage.REFUSE);
-                            reply.setContent("( UnexpectedContent (" + content + "))");
                         }
 
                     } else {
@@ -99,11 +89,12 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
         // Registration with the DF
         DFAgentDescription dfd = new DFAgentDescription();
         ServiceDescription sd = new ServiceDescription();
-        sd.setType("HelloAgent");
+        sd.setType(Type());
         sd.setName(getName());
         sd.setOwnership("TILAB");
         dfd.setName(getAID());
         dfd.addServices(sd);
+
         try {
             DFService.register(this, dfd);
             addBehaviour(behaviour);
@@ -113,25 +104,35 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
         }
         System.out.println(getAID());
 
+
     }
 
+
     public AbstractEquation derivate(AbstractEquation eq){
-        AMSAgentDescription [] agents = null;
-
         try {
-            SearchConstraints c = new SearchConstraints();
-            c.setMaxResults ((long)-1);
-            agents = AMSService.search( this, new AMSAgentDescription (), c );
+            ServiceDescription sd1 = new ServiceDescription();
+            sd1.setType(eq.Type());
+            DFAgentDescription df1 = new DFAgentDescription();
+            df1.addServices(sd1);
+
+            try {
+                DFAgentDescription[] agents = DFService.search(this,df1);
+                ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+                msg.setContentObject(eq);
+                msg.addReceiver( agents[0].getName() );
+                send(msg);
+                ACLMessage msg1 = blockingReceive(MessageTemplate.MatchPerformative(ACLMessage.INFORM));
+                AbstractEquation eq1 = (AbstractEquation)msg1.getContentObject();
+                return eq1;
+
+
+            } catch (FIPAException e) {
+                e.printStackTrace();
+            }
 
 
 
-        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-        msg.setContentObject(eq);
 
-        for (int i=0; i<agents.length;i++)
-            msg.addReceiver( agents[i].getName() );
-
-        send(msg);
 
         //Faudrait pouvoir différencer si on recoit une equation a résoudre ou bien une réponse d'un agent
 

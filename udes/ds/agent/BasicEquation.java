@@ -40,7 +40,12 @@ public class BasicEquation extends AbstractEquation {
 		return ((Math.pow(x,_exponent))*_coefficient);
 	}
 
-	/**  
+	@Override
+	public String Type() {
+		return EquationReceiver.BasicEquation;
+	}
+
+	/**
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
 	protected String getUserReadableString() {

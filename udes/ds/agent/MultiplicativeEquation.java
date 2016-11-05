@@ -39,7 +39,12 @@ public class MultiplicativeEquation extends AbstractEquation {
 		return (_first.getFunctionValue(x) * _second.getFunctionValue(x));
 	}
 
-	/**   
+	@Override
+	public String Type() {
+		return EquationReceiver.MultiplicativeEquation;
+	}
+
+	/**
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
 	protected String getUserReadableString() {

@@ -1,6 +1,7 @@
 package udes.ds.agent;
 
 
+import jade.lang.acl.ACLMessage;
 
 /**
  * Created by root on 16-10-26.
@@ -15,5 +16,4 @@ public class BasicEquationAgent extends EquationReceiver<BasicEquation> {
     protected String Type() {
         return BasicEquation;
     }
-
 }

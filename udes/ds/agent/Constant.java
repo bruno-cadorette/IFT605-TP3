@@ -33,7 +33,12 @@ public class Constant extends AbstractEquation {
 		return _value;
 	}
 
-	/**   
+	@Override
+	public String Type() {
+		return EquationReceiver.Constant;
+	}
+
+	/**
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
 	protected String getUserReadableString() {
