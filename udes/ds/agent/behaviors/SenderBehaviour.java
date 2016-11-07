@@ -1,20 +1,12 @@
 package udes.ds.agent.behaviors;
 
-import jade.content.ContentManager;
-import jade.content.abs.*;
 import jade.content.lang.Codec;
 import jade.content.lang.sl.SLCodec;
-import jade.content.lang.sl.SLVocabulary;
-import jade.content.onto.BasicOntology;
-import jade.content.onto.Ontology;
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
-import jade.util.leap.ArrayList;
-import jade.util.leap.List;
 import udes.ds.agent.AbstractEquation;
 import udes.ds.agent.BasicEquation;
 import udes.ds.agent.Equation;
@@ -48,7 +40,7 @@ public class SenderBehaviour extends SimpleBehaviour {
             msg.setSender(this.myAgent.getAID());
             msg.addReceiver(receiver);
             msg.setLanguage(codec.getName());
-            Equation eq = new SummativeEquation(new BasicEquation(3,1),new BasicEquation(4,2));
+            Equation eq = new SummativeEquation(new BasicEquation(3, 1), new BasicEquation(4, 2));
             // Fill the content of the message
             msg.setContentObject(eq);
             // Send the message
@@ -56,12 +48,13 @@ public class SenderBehaviour extends SimpleBehaviour {
             myAgent.send(msg);
             myAgent.addBehaviour(new SimpleBehaviour() {
                 boolean finished = false;
+
                 @Override
                 public void action() {
                     ACLMessage msg = myAgent.receive();
-                    if(msg != null){
+                    if (msg != null) {
                         try {
-                            AbstractEquation eq1 = (AbstractEquation)msg.getContentObject();
+                            AbstractEquation eq1 = (AbstractEquation) msg.getContentObject();
                             eq1.printUserReadable();
                             finished = true;
                         } catch (UnreadableException e) {

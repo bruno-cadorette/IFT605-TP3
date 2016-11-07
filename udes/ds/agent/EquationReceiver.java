@@ -3,7 +3,7 @@ package udes.ds.agent;
 import jade.content.ContentManager;
 import jade.content.lang.sl.SLCodec;
 import jade.core.Agent;
-import jade.core.behaviours.*;
+import jade.core.behaviours.CyclicBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
@@ -12,13 +12,7 @@ import jade.domain.FIPANames;
 import jade.domain.JADEAgentManagement.JADEManagementOntology;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
-import jade.lang.acl.UnreadableException;
 import jade.util.Logger;
-
-import jade.domain.AMSService;
-import jade.domain.FIPAAgentManagement.*;
-
-import java.util.Arrays;
 
 
 /**
@@ -33,11 +27,6 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
     public int cpt = 0;
 
     private Logger myLogger = Logger.getMyLogger(getClass().getName());
-    private ContentManager manager = (ContentManager) getContentManager();
-
-    protected abstract AbstractEquation specificAction(T equation);
-    protected abstract String Type();
-
     CyclicBehaviour behaviour = new CyclicBehaviour() {
         @Override
         public void action() {
@@ -61,8 +50,7 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
                             reply.setContentObject(answer);
                             String out = (String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), eq1.getUserReadableString()));
                             System.out.println(out);
-                        }
-                        catch (Exception ex){
+                        } catch (Exception ex) {
                             //Le cast plus haut n'a pas fonctionné. Bien entendu c'est impossible de le savoir avec instanceof car ça ne fonctionne pas avec les generics
                             //c'est ça qu'on veut car on l'envoit a tout les agents
                         }
@@ -81,6 +69,11 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
             }
         }
     };
+    private ContentManager manager = (ContentManager) getContentManager();
+
+    protected abstract AbstractEquation specificAction(T equation);
+
+    protected abstract String Type();
 
     @Override
     protected void setup() {
@@ -108,7 +101,7 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
     }
 
 
-    public AbstractEquation derivate(AbstractEquation eq){
+    public AbstractEquation derivate(AbstractEquation eq) {
         try {
             ServiceDescription sd1 = new ServiceDescription();
             sd1.setType(eq.Type());
@@ -116,13 +109,13 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
             df1.addServices(sd1);
 
             try {
-                DFAgentDescription[] agents = DFService.search(this,df1);
+                DFAgentDescription[] agents = DFService.search(this, df1);
                 ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
                 msg.setContentObject(eq);
-                msg.addReceiver( agents[0].getName() );
+                msg.addReceiver(agents[0].getName());
                 send(msg);
                 ACLMessage msg1 = blockingReceive(MessageTemplate.MatchPerformative(ACLMessage.INFORM));
-                AbstractEquation eq1 = (AbstractEquation)msg1.getContentObject();
+                AbstractEquation eq1 = (AbstractEquation) msg1.getContentObject();
                 return eq1;
 
 
@@ -131,13 +124,10 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
             }
 
 
+            //Faudrait pouvoir différencer si on recoit une equation a résoudre ou bien une réponse d'un agent
 
-
-
-        //Faudrait pouvoir différencer si on recoit une equation a résoudre ou bien une réponse d'un agent
-
+        } catch (Exception e) {
         }
-        catch (Exception e) { }
         return null;
     }
 }
