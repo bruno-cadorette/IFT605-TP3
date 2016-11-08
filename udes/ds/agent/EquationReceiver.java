@@ -23,9 +23,6 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
     public static final String BasicEquation = "BasicEquation";
     public static final String MultiplicativeEquation = "MultiplicativeEquation";
     public static final String SummativeEquation = "SummativeEquation";
-
-    public int cpt = 0;
-
     private Logger myLogger = Logger.getMyLogger(getClass().getName());
     CyclicBehaviour behaviour = new CyclicBehaviour() {
         @Override
@@ -70,6 +67,21 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
         }
     };
     private ContentManager manager = (ContentManager) getContentManager();
+
+    public static float TestFac(Equation original, Equation derivated) {
+        float res = 0;
+        for (int i = 0; i < 10; i++) {
+            float x1 = 2 * i;
+            float x2 = x1 + 0.1f;
+            double y1 = (original.getFunctionValue(x2) - original.getFunctionValue(x1)) / 0.1d;
+            double y2 = derivated.getFunctionValue(x1);
+            if (Math.abs(y1 - y2) < 1) {
+                res += 1;
+            }
+        }
+        //SCORE
+        return res / 10.0f;
+    }
 
     protected abstract AbstractEquation specificAction(T equation);
 
@@ -116,6 +128,8 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
                 send(msg);
                 ACLMessage msg1 = blockingReceive(MessageTemplate.MatchPerformative(ACLMessage.INFORM));
                 AbstractEquation eq1 = (AbstractEquation) msg1.getContentObject();
+                System.out.println("Test fact");
+                System.out.println(this.TestFac(eq, eq1));
                 return eq1;
 
 
