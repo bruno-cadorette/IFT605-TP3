@@ -8,9 +8,10 @@ import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 import udes.ds.agent.AbstractEquation;
-import udes.ds.agent.BasicEquation;
 import udes.ds.agent.Equation;
-import udes.ds.agent.SummativeEquation;
+import udes.ds.agent.Parser;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by root on 16-10-26.
@@ -33,14 +34,17 @@ public class SenderBehaviour extends SimpleBehaviour {
     public void action() {
         try {
             // Preparing the first message
-            Thread.sleep(2000);
+            ConcurrentLinkedQueue<String> qu = ((ConcurrentLinkedQueue<String>) getDataStore().get("queue"));
+            if (qu.isEmpty()) {
+                return;
+            }
+            Equation eq = Parser.Parse(qu.poll());
             ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
             AID receiver = new AID("eq", false);
 
             msg.setSender(this.myAgent.getAID());
             msg.addReceiver(receiver);
             msg.setLanguage(codec.getName());
-            Equation eq = new SummativeEquation(new BasicEquation(3, 1), new BasicEquation(4, 2));
             // Fill the content of the message
             msg.setContentObject(eq);
             // Send the message
