@@ -4,28 +4,26 @@ import jade.content.lang.Codec;
 import jade.content.lang.sl.SLCodec;
 import jade.core.AID;
 import jade.core.Agent;
+import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 import udes.ds.agent.AbstractEquation;
 import udes.ds.agent.Equation;
+import udes.ds.agent.EquationReceiver;
 import udes.ds.agent.Parser;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class SenderBehaviour extends SimpleBehaviour {
+public class GeneticSenderBehaviour extends CyclicBehaviour {
 
     // This agent speaks the SL language
     private Codec codec = new SLCodec();
     // This agent complies with the People ontology
     private boolean finished = false;
 
-    public SenderBehaviour(Agent a) {
+    public GeneticSenderBehaviour(Agent a) {
         super(a);
-    }
-
-    public boolean done() {
-        return finished;
     }
 
     public void action() {
@@ -35,7 +33,8 @@ public class SenderBehaviour extends SimpleBehaviour {
             if (qu.isEmpty()) {
                 return;
             }
-            Equation eq = Parser.Parse(qu.poll());
+            String input = qu.poll();
+            Equation eq = Parser.Parse(input);
             ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
             AID receiver = new AID("eq", false);
 
@@ -57,6 +56,11 @@ public class SenderBehaviour extends SimpleBehaviour {
                         try {
                             AbstractEquation eq1 = (AbstractEquation) msg.getContentObject();
                             eq1.printUserReadable();
+                            if (EquationReceiver.TestFac(eq, eq1) < 1.0f) {
+                                System.out.println("This is not the right answer! We'll requeue the input till it is the case.");
+                                qu.add(input);
+                            }
+
                             finished = true;
                         } catch (UnreadableException e) {
                             e.printStackTrace();
@@ -73,7 +77,5 @@ public class SenderBehaviour extends SimpleBehaviour {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        finished = true;
     }
 }

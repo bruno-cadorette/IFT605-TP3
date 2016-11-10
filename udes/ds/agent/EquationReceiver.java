@@ -40,7 +40,7 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
                         //Envoyer
                         try {
                             T eq1 = (T) msg.getContentObject();
-                            AbstractEquation answer = specificAction(eq1);
+                            AbstractEquation answer = ComputeEquation(eq1);
 
 
                             reply.setPerformative(ACLMessage.INFORM);
@@ -70,17 +70,23 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
 
     public static float TestFac(Equation original, Equation derivated) {
         float res = 0;
+        float delta = 0.000001f;
         for (int i = 0; i < 10; i++) {
-            float x1 = 2 * i;
-            float x2 = x1 + 0.1f;
-            double y1 = (original.getFunctionValue(x2) - original.getFunctionValue(x1)) / 0.1d;
+            float x1 = 1.2f * i;
+            float x2 = x1 + delta;
+            double y1 = (original.getFunctionValue(x2) - original.getFunctionValue(x1)) / delta;
             double y2 = derivated.getFunctionValue(x1);
-            if (Math.abs(y1 - y2) < 1) {
+            if (Math.abs(y1 - y2) / Math.max(y1, y2) < 0.3 || Math.abs(y1 - y2) < 1) {
                 res += 1;
             }
         }
         //SCORE
         return res / 10.0f;
+    }
+
+    protected AbstractEquation ComputeEquation(T eq) {
+        AbstractEquation answer = specificAction(eq);
+        return answer;
     }
 
     protected abstract AbstractEquation specificAction(T equation);

@@ -11,7 +11,7 @@ import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.util.Logger;
-import udes.ds.agent.behaviors.SenderBehaviour;
+import udes.ds.agent.behaviors.GeneticSenderBehaviour;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -37,7 +37,7 @@ public class EquationSender extends Agent {
         dfd.setName(getAID());
         dfd.addServices(sd);
         HttpServer server = null;
-        Behaviour b = new SenderBehaviour(this);
+        Behaviour b = new GeneticSenderBehaviour(this);
         ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<>();
         try {
             server = HttpServer.create(new InetSocketAddress(8080), 0);
