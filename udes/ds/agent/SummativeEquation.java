@@ -32,6 +32,11 @@ public class SummativeEquation extends AbstractEquation {
         return _second;
     }
 
+    @Override
+    public Object[] getParams() {
+        return new Object[]{_first, _second, new Double(0), new Double(1)};
+    }
+
     /**
      * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)
      */

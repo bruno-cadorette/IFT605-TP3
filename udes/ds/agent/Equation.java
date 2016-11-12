@@ -14,7 +14,8 @@ import java.io.Serializable;
  * @version     1.0        
  */
 public interface Equation extends Serializable {
-	
+
+	abstract public Object[] getParams();
 	/**
 	 * Computes de value of y (the function value) given the value of x
 	 *

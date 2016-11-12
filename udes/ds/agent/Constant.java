@@ -25,8 +25,13 @@ public class Constant extends AbstractEquation {
 	public double getValue() {
 		return _value;
 	}
-	
-	/**   
+
+	@Override
+	public Object[] getParams() {
+		return new Double[]{_value, _value, new Double(0), new Double(1)};
+	}
+
+	/**
 	 * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)       
 	 */
 	public double getFunctionValue(double x) {

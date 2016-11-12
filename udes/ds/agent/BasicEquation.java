@@ -33,6 +33,11 @@ public class BasicEquation extends AbstractEquation {
         return _exponent;
     }
 
+    @Override
+    public Object[] getParams() {
+        return new Object[]{_coefficient, new Double(_exponent), new Double(0), new Double(1)};
+    }
+
     /**
      * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)
      */
