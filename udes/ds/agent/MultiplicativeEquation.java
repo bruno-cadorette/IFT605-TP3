@@ -22,6 +22,8 @@ public class MultiplicativeEquation extends BinaryEquation {
         super();
         _first = first;
         _second = second;
+        Left = _first;
+        Right = _second;
     }
 
     public MultiplicativeEquation() {

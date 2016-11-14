@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class Parser {
     public static AbstractEquation Parse(String input) {
         LinkedList<String> chars = new LinkedList<>();
-        Matcher m = Pattern.compile("C|\\(|\\+|\\*|\\)|\\^|-?[0-9]+([.][0-9]+)?").matcher(input);
+        Matcher m = Pattern.compile("M|C|\\(|\\+|\\*|\\)|\\^|-?[0-9]+([.][0-9]+)?").matcher(input);
         while (m.find()) {
             chars.add(m.group());
         }
@@ -42,6 +42,8 @@ public class Parser {
                 return BinaryFunctionParse(xs, (a, b) -> new SummativeEquation(a, b));
             case "*":
                 return BinaryFunctionParse(xs, (a, b) -> new MultiplicativeEquation(a, b));
+            case "M":
+                return BinaryFunctionParse(xs, (a, b) -> new SubstractEquation(a, b));
             case "^":
                 double a = DoubleParser(xs);
                 double b = DoubleParser(xs);
