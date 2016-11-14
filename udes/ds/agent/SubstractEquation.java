@@ -12,17 +12,17 @@ package udes.ds.agent;
  * @author Luc Bergevin
  * @version 1.0
  */
-public class SummativeEquation extends BinaryEquation {
+public class SubstractEquation extends BinaryEquation {
 
     private static final long serialVersionUID = 1L;
 
-    public SummativeEquation(AbstractEquation first, AbstractEquation second) {
+    public SubstractEquation(AbstractEquation first, AbstractEquation second) {
         super();
         Left = first;
         Right = second;
     }
 
-    public SummativeEquation() {
+    public SubstractEquation() {
     }
 
     public AbstractEquation getFirst() {
@@ -42,23 +42,23 @@ public class SummativeEquation extends BinaryEquation {
      * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)
      */
     public double getFunctionValue(double x) {
-        return (Left.getFunctionValue(x) + Right.getFunctionValue(x));
+        return (Left.getFunctionValue(x) - Right.getFunctionValue(x));
     }
 
     @Override
     public String Type() {
-        return EquationReceiver.SummativeEquation;
+        return EquationReceiver.SubstractEquation;
     }
 
     /**
      * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()
      */
     public String getUserReadableString() {
-        return new String(Left.getUserReadableString() + " + " + Right.getUserReadableString());
+        return new String(Left.getUserReadableString() + " - " + Right.getUserReadableString());
     }
 
     @Override
     public BinaryEquation Copy(AbstractEquation a, AbstractEquation b) {
-        return new SummativeEquation(a, b);
+        return new SubstractEquation(a, b);
     }
 }

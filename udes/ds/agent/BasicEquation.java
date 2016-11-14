@@ -13,36 +13,45 @@ package udes.ds.agent;
  * @version 1.0
  * @see
  */
-public class BasicEquation extends AbstractEquation {
+public class BasicEquation extends BinaryEquation {
 
     private static final long serialVersionUID = 1L;
-    private double _coefficient;
-    private int _exponent;
+    private AbstractEquation _coefficient;
+    private AbstractEquation _exponent;
 
-    public BasicEquation(double coefficient, int exponent) {
+    public BasicEquation(AbstractEquation coefficient, AbstractEquation exponent) {
         super();
         _coefficient = coefficient;
         _exponent = exponent;
+        Left = _coefficient;
+        Right = _exponent;
+    }
+
+    public BasicEquation() {
+    }
+
+    public BasicEquation(double co, double exp) {
+        this(new Constant(co), new Constant(exp));
     }
 
     public double getCoefficient() {
-        return _coefficient;
+        return _coefficient.getFunctionValue(1);
     }
 
-    public int getExponent() {
-        return _exponent;
+    public double getExponent() {
+        return _exponent.getFunctionValue(1);
     }
 
     @Override
     public Object[] getParams() {
-        return new Object[]{_coefficient, new Double(_exponent), new Double(0), new Double(1)};
+        return new Object[]{};
     }
 
     /**
      * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)
      */
     public double getFunctionValue(double x) {
-        return ((Math.pow(x, _exponent)) * _coefficient);
+        return ((Math.pow(x, _exponent.getFunctionValue(1))) * _coefficient.getFunctionValue(1));
     }
 
     @Override
@@ -54,7 +63,11 @@ public class BasicEquation extends AbstractEquation {
      * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()
      */
     protected String getUserReadableString() {
-        return new String(Double.toString(_coefficient) + "x^" + Integer.toString(_exponent));
+        return new String(Double.toString(_coefficient.getFunctionValue(1)) + "x^" + Double.toString(_exponent.getFunctionValue(1)));
     }
 
+    @Override
+    public BinaryEquation Copy(AbstractEquation a, AbstractEquation b) {
+        return new BasicEquation(a, b);
+    }
 }

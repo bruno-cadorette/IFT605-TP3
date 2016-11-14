@@ -44,7 +44,7 @@ public class Parser {
                 return BinaryFunctionParse(xs, (a, b) -> new MultiplicativeEquation(a, b));
             case "^":
                 double a = DoubleParser(xs);
-                int b = IntParser(xs);
+                double b = DoubleParser(xs);
                 return new BasicEquation(a, b);
             case "C":
                 return new Constant(DoubleParser(xs));

@@ -11,6 +11,7 @@ import jade.domain.FIPAException;
  * Created by root on 16-11-12.
  */
 public abstract class BaseOps extends Agent {
+
     public abstract String GetType();
 
     public abstract Behaviour GetBehaviour();
@@ -35,5 +36,11 @@ public abstract class BaseOps extends Agent {
         System.out.println(getAID());
 
 
+    }
+
+    public enum Type {
+        Add,
+        Product,
+        Sub
     }
 }

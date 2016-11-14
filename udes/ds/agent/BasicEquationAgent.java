@@ -6,7 +6,7 @@ package udes.ds.agent;
  */
 public class BasicEquationAgent extends EquationReceiver<BasicEquation> {
     protected AbstractEquation specificAction(BasicEquation equation) {
-        int exp = equation.getExponent();
+        double exp = equation.getExponent();
         return new BasicEquation(equation.getCoefficient() * exp, exp - 1);
     }
 

@@ -12,7 +12,7 @@ package udes.ds.agent;
  * @author Luc Bergevin
  * @version 1.0
  */
-public class MultiplicativeEquation extends AbstractEquation {
+public class MultiplicativeEquation extends BinaryEquation {
 
     private static final long serialVersionUID = 1L;
     private AbstractEquation _first;
@@ -22,6 +22,9 @@ public class MultiplicativeEquation extends AbstractEquation {
         super();
         _first = first;
         _second = second;
+    }
+
+    public MultiplicativeEquation() {
     }
 
     public AbstractEquation getFirst() {
@@ -54,5 +57,10 @@ public class MultiplicativeEquation extends AbstractEquation {
      */
     protected String getUserReadableString() {
         return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
+    }
+
+    @Override
+    public BinaryEquation Copy(AbstractEquation a, AbstractEquation b) {
+        return new MultiplicativeEquation(a, b);
     }
 }

@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce317f63-03fc-4c88-8d22-51a9de28d6fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/udes/ds/agent/BinaryEquation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/udes/ds/agent/SubstractEquation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/BasicEquation.java" afterPath="$PROJECT_DIR$/udes/ds/agent/BasicEquation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/Constant.java" afterPath="$PROJECT_DIR$/udes/ds/agent/Constant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/Equation.java" afterPath="$PROJECT_DIR$/udes/ds/agent/Equation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java" afterPath="$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java" afterPath="$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java" afterPath="$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/Parser.java" afterPath="$PROJECT_DIR$/udes/ds/agent/Parser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java" afterPath="$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java" afterPath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java" afterPath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java" afterPath="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java" afterPath="$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java" afterPath="$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java" afterPath="$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/genetics/MultiplicativeAgent.java" afterPath="$PROJECT_DIR$/udes/ds/agent/genetics/MultiplicativeAgent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/udes/ds/agent/genetics/SummativeAgent.java" afterPath="$PROJECT_DIR$/udes/ds/agent/genetics/SummativeAgent.java" />
     </list>
     <ignored path="tp3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,34 +41,34 @@
       <file leaf-file-name="EquationReceiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="118" selection-end-column="5" />
+            <state relative-caret-position="-270">
+              <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneticEquationReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#675#676#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#807#808#0" expanded="true" />
+                <element signature="e#2966#2984#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConstantAgent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java">
+      <file leaf-file-name="SubstractEquation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/SubstractEquation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#281#282#0" expanded="true" />
-                <element signature="e#319#320#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicEquationAgent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="56" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="56" />
+            <state relative-caret-position="377">
+              <caret line="55" column="96" selection-start-line="55" selection-start-column="96" selection-end-line="55" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -69,21 +77,43 @@
       <file leaf-file-name="MultiplicativeEquation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
+            <state relative-caret-position="29">
+              <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicEquationAgent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicEquation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
               <folding>
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#836#837#0" expanded="true" />
+                <element signature="e#891#892#0" expanded="true" />
+                <element signature="e#1748#1749#0" expanded="true" />
+                <element signature="e#1793#1794#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Equation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/Equation.java">
+      <file leaf-file-name="BasicEquationAgent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+            <state relative-caret-position="252">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -92,57 +122,28 @@
       <file leaf-file-name="GeneticSenderBehaviour.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/udes/ds/agent/behaviors/GeneticSenderBehaviour.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="179">
+              <caret line="56" column="93" selection-start-line="56" selection-start-column="93" selection-end-line="56" selection-end-column="93" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SummativeEquation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java">
+      <file leaf-file-name="EquationSender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
-              <folding>
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="414">
+              <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseOps.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java">
+      <file leaf-file-name="BinaryEquation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/udes/ds/agent/BinaryEquation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseOpsBehaviour.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseOpsMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="144">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -172,38 +173,43 @@
         <option value="$PROJECT_DIR$/udes/ds/agent/behaviors/SenderBehavior.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/ontology/EquationOntology.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/DerivativeController.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/AbstractEquation.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/ConstantAgent.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/MultiplicativeAgent.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/Parser.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/SummativeAgent.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/GeneticEquationReceiver.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/MultiplicativeAgent.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/SummativeAgent.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/behaviors/GeneticSenderBehaviour2.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/behaviors/SenderBehaviour.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/EquationSender.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/behaviors/GeneticSenderBehaviour.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/Equation.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/Constant.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/BasicEquation.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/AbstractEquation.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java" />
         <option value="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java" />
-        <option value="$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/DerivativeEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/BinaryEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/DerivativeEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/MultiplicativeAgent.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/SummativeAgent.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/Parser.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/behaviors/GeneticSenderBehaviour.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/SubstractEquation.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java" />
+        <option value="$PROJECT_DIR$/udes/ds/agent/BasicEquation.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1920" />
-    <option name="height" value="1056" />
+    <option name="x" value="-1" />
+    <option name="y" value="-4" />
+    <option name="width" value="1922" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -230,8 +236,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -320,7 +326,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,8 +337,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="udes.ds.agent.behaviors" />
       <recent name="udes.ds.agent" />
+      <recent name="udes.ds.agent.behaviors" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/udes/ds/agent/genetics" />
@@ -600,7 +606,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="jade.Boot" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-agents &quot;eq:udes.ds.agent.genetics.BasicEquationAgent;s:udes.ds.agent.EquationSender&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="-agents &quot;eq:udes.ds.agent.genetics.BasicEquationAgent;s:udes.ds.agent.EquationSender;eq1:udes.ds.agent.genetics.ConstantAgent&quot;" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -667,36 +673,43 @@
       <option name="project" value="LOCAL" />
       <updated>1478754224696</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Basic Ops&#10;">
+      <created>1478967498778</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1478967498778</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
+    <frame x="-1" y="-4" width="1922" height="1085" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11145833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887974" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887974" sideWeight="0.19895834" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32887974" sideWeight="0.80104166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11145833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299075" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979446" sideWeight="0.48333332" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887974" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887974" sideWeight="0.80104166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299075" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979446" sideWeight="0.48333332" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -719,7 +732,8 @@
     <MESSAGE value="Add the test for the fact" />
     <MESSAGE value="Added http server for input" />
     <MESSAGE value="Add Genetics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Genetics" />
+    <MESSAGE value="Add Basic Ops&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Basic Ops&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -729,7 +743,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java</url>
-          <line>138</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -747,7 +761,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java</url>
-          <line>123</line>
+          <line>131</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -757,8 +771,38 @@
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java</url>
+          <line>110</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java</url>
+          <line>92</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -771,46 +815,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/AbstractEquation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/HelloAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="33" column="70" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/jade/lib/jade.jar!/jade/content/ContentManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2250">
@@ -823,7 +827,10 @@
         <state relative-caret-position="252">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#2654#2655#0" expanded="false" />
+            <element signature="e#2709#2710#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,8 +840,8 @@
         <state relative-caret-position="180">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="false" />
+            <element signature="e#536#537#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -935,14 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/udes/ds/agent/ConstantAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -967,7 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1458">
           <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,15 +973,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16002">
           <caret line="1034" column="0" selection-start-line="1034" selection-start-column="0" selection-end-line="1034" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationSender.java">
+    <entry file="jar://$PROJECT_DIR$/jade/lib/jade.jar!/jade/domain/DFService.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="206">
+          <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+          <folding>
+            <element signature="e#464#465#0" expanded="false" />
+            <element signature="e#536#537#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/Equation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -995,66 +1012,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/SummativeAgent.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/SummativeAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+          <caret line="9" column="76" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/MultiplicativeAgent.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="90" selection-start-line="10" selection-start-column="90" selection-end-line="10" selection-end-column="90" />
+        <state relative-caret-position="270">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/jade/lib/jade.jar!/jade/domain/DFService.class">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
+        <state relative-caret-position="216">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/src.zip!/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="183" column="18" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/udes/ds/agent/AbstractEquation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="342">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/SummativeAgent.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/SummativeAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="76" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="76" />
+        <state relative-caret-position="198">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/DerivativeEquation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="47" column="40" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/MultiplicativeAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,119 +1127,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/Constant.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+        <state relative-caret-position="247">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#828#829#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquation.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
+        <state relative-caret-position="414">
+          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/Equation.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        <state relative-caret-position="252">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/behaviors/GeneticSenderBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="56" column="93" selection-start-line="56" selection-start-column="93" selection-end-line="56" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/BasicEquationAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/BinaryEquation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/SubstractEquation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="55" column="96" selection-start-line="55" selection-start-column="96" selection-end-line="55" selection-end-column="96" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/udes/ds/agent/MultiplicativeEquation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
-          <folding>
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/SummativeEquation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
-          <folding>
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/behaviors/GeneticSenderBehaviour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/ConstantAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquationAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="56" />
+        <state relative-caret-position="29">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/udes/ds/agent/EquationReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="118" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="-270">
+          <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOpsBehaviour.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/genetics/GeneticEquationReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="182">
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#2966#2984#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/udes/ds/agent/basicOps/BaseOps.java">
+    <entry file="file://$PROJECT_DIR$/udes/ds/agent/BasicEquation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="355">
+          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
           </folding>
         </state>
       </provider>

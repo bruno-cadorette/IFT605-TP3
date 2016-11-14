@@ -23,6 +23,7 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
     public static final String BasicEquation = "BasicEquation";
     public static final String MultiplicativeEquation = "MultiplicativeEquation";
     public static final String SummativeEquation = "SummativeEquation";
+    public static final String SubstractEquation = "SubstractEquation";
     private Logger myLogger = Logger.getMyLogger(getClass().getName());
     CyclicBehaviour behaviour = new CyclicBehaviour() {
         @Override
@@ -48,6 +49,7 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
                             String out = (String.format("Hello %s this is %s, you sent me \" %s \"", msg.getSender().getLocalName(), this.getAgent().getLocalName(), eq1.getUserReadableString()));
                             System.out.println(out);
                         } catch (Exception ex) {
+                            System.out.println(ex.getMessage());
                             //Le cast plus haut n'a pas fonctionné. Bien entendu c'est impossible de le savoir avec instanceof car ça ne fonctionne pas avec les generics
                             //c'est ça qu'on veut car on l'envoit a tout les agents
                         }
@@ -68,12 +70,18 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
     };
     private ContentManager manager = (ContentManager) getContentManager();
 
-    public static float TestFac(Equation original, Equation derivated) {
-        float res = 0;
-        float delta = 0.000001f;
+    public static double TestFac(Equation original, Equation derivated) {
+        if (derivated instanceof BasicEquation) {
+            udes.ds.agent.BasicEquation eq = (udes.ds.agent.BasicEquation) derivated;
+            if (eq.getCoefficient() == 28.0d && eq.getExponent() == 3.0d) {
+                System.out.println("ON LA");
+            }
+        }
+        double res = 0;
+        double delta = 0.000001f;
         for (int i = 0; i < 10; i++) {
-            float x1 = 1.2f * i;
-            float x2 = x1 + delta;
+            double x1 = 1.2f * i;
+            double x2 = x1 + delta;
             double y1 = (original.getFunctionValue(x2) - original.getFunctionValue(x1)) / delta;
             double y2 = derivated.getFunctionValue(x1);
             if (Math.abs(y1 - y2) / Math.max(y1, y2) < 0.3 || Math.abs(y1 - y2) < 1) {
