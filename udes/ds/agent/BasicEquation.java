@@ -62,7 +62,7 @@ public class BasicEquation extends BinaryEquation {
     /**
      * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()
      */
-    protected String getUserReadableString() {
+    public String getUserReadableString() {
         return new String(Double.toString(_coefficient.getFunctionValue(1)) + "x^" + Double.toString(_exponent.getFunctionValue(1)));
     }
 

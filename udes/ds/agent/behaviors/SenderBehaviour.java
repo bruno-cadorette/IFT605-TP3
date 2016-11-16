@@ -2,13 +2,14 @@ package udes.ds.agent.behaviors;
 
 import jade.content.lang.Codec;
 import jade.content.lang.sl.SLCodec;
-import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 import udes.ds.agent.AbstractEquation;
-import udes.ds.agent.Equation;
 import udes.ds.agent.Parser;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -35,12 +36,16 @@ public class SenderBehaviour extends SimpleBehaviour {
             if (qu.isEmpty()) {
                 return;
             }
-            Equation eq = Parser.Parse(qu.poll());
+            AbstractEquation eq = Parser.Parse(qu.poll());
             ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-            AID receiver = new AID("eq", false);
+            ServiceDescription sd1 = new ServiceDescription();
+            sd1.setType(eq.Type());
+            DFAgentDescription df1 = new DFAgentDescription();
+            df1.addServices(sd1);
+            DFAgentDescription[] agents = DFService.search(myAgent, df1);
 
             msg.setSender(this.myAgent.getAID());
-            msg.addReceiver(receiver);
+            msg.addReceiver(agents[0].getName());
             msg.setLanguage(codec.getName());
             // Fill the content of the message
             msg.setContentObject(eq);

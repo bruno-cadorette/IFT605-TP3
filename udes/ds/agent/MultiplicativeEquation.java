@@ -57,7 +57,7 @@ public class MultiplicativeEquation extends BinaryEquation {
     /**
      * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()
      */
-    protected String getUserReadableString() {
+    public String getUserReadableString() {
         return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
     }
 

@@ -40,7 +40,7 @@ public abstract class GeneticEquationReceiver<T extends BinaryEquation> extends 
                 ACLMessage msg1 = blockingReceive(MessageTemplate.MatchPerformative(ACLMessage.INFORM));
                 AbstractEquation eq1 = (AbstractEquation) msg1.getContentObject();
                 System.out.println("Test fact");
-                System.out.println(this.TestFac(eq, eq1));
+                System.out.println(TestFac(eq, eq1));
                 return eq1;
 
 
@@ -65,13 +65,9 @@ public abstract class GeneticEquationReceiver<T extends BinaryEquation> extends 
         operators.add(new SubstractEquation());
         AbstractEquation current = null;
         double distance = Double.MAX_VALUE;
-        //operators.add(new SummativeEquation());
-        //operators.add(new udes.ds.agent.genetics.MultiplicativeAgent());
         AbstractEquation deriv1 = Derivate(eq.Left);
         AbstractEquation deriv2 = Derivate(eq.Right);
         ArrayList<AbstractEquation> baseParams = new ArrayList<AbstractEquation>() {{
-            //add(Left);
-            //add(Right);
             add(deriv1);
             add(deriv2);
             add(eq.Left);
@@ -91,13 +87,14 @@ public abstract class GeneticEquationReceiver<T extends BinaryEquation> extends 
                 for (int j = 0; j < params.size(); j++) {
                     BinaryEquation answer = operators.get(op).Copy(params.get(i), params.get(j));
                     double value = TestFac(eq, answer);
-                    if (value == 1.0d) {
-                        System.out.println("ON LA");
-                    }
+                    if (value > 0.5)
+                        System.out.println(String.format("%s %s score : %s", getName(), answer.getUserReadableString(), value));
                     if (1.0d - value < distance) {
-                        System.out.println("NEW VAL");
                         distance = 1.0d - value;
                         current = answer;
+                    }
+                    if (value >= 0.99d) {
+                        break;
                     }
                 }
             }

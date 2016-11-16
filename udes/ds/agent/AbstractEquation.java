@@ -21,7 +21,7 @@ public abstract class AbstractEquation implements Equation {
 	 *
 	 * @return      String          
 	 */
-	abstract protected String getUserReadableString();
+	abstract public String getUserReadableString();
 
 	/**   
 	 * @see udes.ds.rmi.hw.Equation#printUserReadable()      
