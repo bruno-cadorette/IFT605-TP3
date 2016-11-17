@@ -71,12 +71,6 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
     private ContentManager manager = (ContentManager) getContentManager();
 
     public static double TestFac(Equation original, Equation derivated) {
-        if (derivated instanceof BasicEquation) {
-            udes.ds.agent.BasicEquation eq = (udes.ds.agent.BasicEquation) derivated;
-            if (eq.getCoefficient() == 28.0d && eq.getExponent() == 3.0d) {
-                System.out.println("ON LA");
-            }
-        }
         double res = 0;
         double delta = 0.000001f;
         for (int i = 0; i < 10; i++) {
@@ -143,7 +137,7 @@ public abstract class EquationReceiver<T extends AbstractEquation> extends Agent
                 ACLMessage msg1 = blockingReceive(MessageTemplate.MatchPerformative(ACLMessage.INFORM));
                 AbstractEquation eq1 = (AbstractEquation) msg1.getContentObject();
                 System.out.println("Test fact");
-                System.out.println(this.TestFac(eq, eq1));
+                System.out.println(TestFac(eq, eq1));
                 return eq1;
 
 

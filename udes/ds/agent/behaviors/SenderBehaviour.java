@@ -33,6 +33,7 @@ public class SenderBehaviour extends SimpleBehaviour {
         try {
             // Preparing the first message
             ConcurrentLinkedQueue<String> qu = ((ConcurrentLinkedQueue<String>) getDataStore().get("queue"));
+            ConcurrentLinkedQueue<String> qu_res = ((ConcurrentLinkedQueue<String>) getDataStore().get("queue_response"));
             if (qu.isEmpty()) {
                 return;
             }
@@ -62,6 +63,7 @@ public class SenderBehaviour extends SimpleBehaviour {
                         try {
                             AbstractEquation eq1 = (AbstractEquation) msg.getContentObject();
                             eq1.printUserReadable();
+                            qu_res.add(eq1.getUserReadableString());
                             finished = true;
                         } catch (UnreadableException e) {
                             e.printStackTrace();

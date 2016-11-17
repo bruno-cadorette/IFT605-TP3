@@ -31,6 +31,7 @@ public class GeneticSenderBehaviour extends CyclicBehaviour {
         try {
             // Preparing the first message
             ConcurrentLinkedQueue<String> qu = ((ConcurrentLinkedQueue<String>) getDataStore().get("queue"));
+            ConcurrentLinkedQueue<String> qu_res = ((ConcurrentLinkedQueue<String>) getDataStore().get("queue_response"));
             if (qu.isEmpty()) {
                 return;
             }
@@ -66,6 +67,7 @@ public class GeneticSenderBehaviour extends CyclicBehaviour {
                                 System.out.println("This is not the right answer! We'll requeue the input till it is the case.");
                                 qu.add(input);
                             }
+                            qu_res.add(eq1.getUserReadableString());
 
                             finished = true;
                         } catch (UnreadableException e) {

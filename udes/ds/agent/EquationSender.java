@@ -39,13 +39,15 @@ public class EquationSender extends Agent {
         HttpServer server = null;
         Behaviour b = new GeneticSenderBehaviour(this);
         ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<>();
+        ConcurrentLinkedQueue<String> queue_res = new ConcurrentLinkedQueue<>();
         try {
             server = HttpServer.create(new InetSocketAddress(8080), 0);
 
-            server.createContext("/requests", new InputServer(queue));
+            server.createContext("/requests", new InputServer(queue, queue_res));
             server.setExecutor(null); // creates a default executor
             server.start();
             b.getDataStore().put("queue", queue);
+            b.getDataStore().put("queue_response", queue_res);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,9 +65,11 @@ public class EquationSender extends Agent {
 
     private class InputServer implements HttpHandler {
         ConcurrentLinkedQueue<String> queue;
+        ConcurrentLinkedQueue<String> queue_res;
 
-        InputServer(ConcurrentLinkedQueue<String> q) {
+        InputServer(ConcurrentLinkedQueue<String> q, ConcurrentLinkedQueue<String> q_r) {
             queue = q;
+            queue_res = q_r;
         }
 
         @Override
@@ -74,7 +78,9 @@ public class EquationSender extends Agent {
             String body = new BufferedReader(new InputStreamReader(inputStream))
                     .lines().collect(Collectors.joining("\n"));
             queue.add(body);
-            String response = "OK";
+            while (queue_res.isEmpty()) {
+            }
+            String response = queue_res.poll();
             exchange.sendResponseHeaders(200, response.length());
             OutputStream os = exchange.getResponseBody();
             os.write(response.getBytes());
